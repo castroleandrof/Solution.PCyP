@@ -1,4 +1,5 @@
 ﻿using Domain.PCyP.Biz;
+using Domain.PCyP.BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            var lista = new List<Category>();
-            lista.Add(new Category(1, "Categoria 1", DateTime.Now, 1, DateTime.Now, 1));
-            lista.Add(new Category(2, "Categoria 2", DateTime.Now, 2, DateTime.Now, 2));
-            lista.Add(new Category(3, "Categoria 3", DateTime.Now, 3, DateTime.Now, 3));
-            lista.Add(new Category(4, "Categoria 4", DateTime.Now, 4, DateTime.Now, 4));
+            var lista = new List<Category>() ;
 
             return View(lista);
         }
@@ -35,12 +32,12 @@ namespace PCyP.WebSite.Controllers
 
         // POST: Category/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Category model)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                CategoryBusiness.Add(model);
                 return RedirectToAction("Index");
             }
             catch
