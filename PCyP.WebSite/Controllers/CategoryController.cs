@@ -45,7 +45,7 @@ namespace PCyP.WebSite.Controllers
                 return View();
             }
         }
-
+        
         // GET: Category/Edit/5
         public ActionResult Edit(int id)
         {
@@ -60,6 +60,7 @@ namespace PCyP.WebSite.Controllers
             {
                 // TODO: Add update logic here
 
+                           
                 return RedirectToAction("Index");
             }
             catch

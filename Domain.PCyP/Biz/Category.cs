@@ -10,7 +10,9 @@ namespace Domain.PCyP.Biz
     {
         public String name { get; set; }
         public Category()
-        {            
+        {
+            this.CreatedOn = DateTime.Now;
+            this.ChangedOn = DateTime.Now;
         }
     }
 }
