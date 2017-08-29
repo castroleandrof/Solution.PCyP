@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Biz\Category.cs" />
     <Compile Include="Biz\EntityBase.cs" />
+    <Compile Include="Biz\Student.cs" />
     <Compile Include="BLL\CategoryBusiness.cs" />
+    <Compile Include="BLL\StudentBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

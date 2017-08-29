@@ -10,7 +10,6 @@ namespace Domain.PCyP.BLL
     public static class CategoryBusiness
     {
         private static List<Category> _categoryList = new List<Category>();
-
         public static void Add(Category categoria)
         {
         _categoryList.Add(categoria);

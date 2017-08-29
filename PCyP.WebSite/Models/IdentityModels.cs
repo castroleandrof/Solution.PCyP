@@ -29,5 +29,9 @@ namespace PCyP.WebSite.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Domain.PCyP.Biz.Category> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<Domain.PCyP.Biz.Student> Students { get; set; }
     }
 }

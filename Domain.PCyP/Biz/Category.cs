@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.PCyP.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Domain.PCyP.Biz
         {
             this.CreatedOn = DateTime.Now;
             this.ChangedOn = DateTime.Now;
+            Id = CategoryBusiness.GetCategoryList().Count;
         }
     }
 }

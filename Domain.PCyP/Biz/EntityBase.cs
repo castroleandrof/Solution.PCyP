@@ -8,7 +8,7 @@ namespace Domain.PCyP.Biz
 {
     public class EntityBase
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public DateTime CreatedOn { get; set; }
         public int CratedBy { get; set; }
         public DateTime ChangedOn { get; set; }
