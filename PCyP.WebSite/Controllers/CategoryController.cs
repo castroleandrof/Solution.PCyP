@@ -15,7 +15,7 @@ namespace PCyP.WebSite.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            var lista = CategoryBusiness.GetCategoryList() ;
+            var lista = CategoryBusiness.GetCategoryList();
 
             return View(lista);
         }

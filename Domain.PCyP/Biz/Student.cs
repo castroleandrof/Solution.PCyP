@@ -22,8 +22,7 @@ namespace Domain.PCyP.Biz
         public Student() {
             this.CreatedOn = DateTime.Now;
             this.ChangedOn = DateTime.Now;
-                        
-            }
+        }
 
 
 

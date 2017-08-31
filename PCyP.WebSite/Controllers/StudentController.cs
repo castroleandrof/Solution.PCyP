@@ -37,6 +37,8 @@ namespace PCyP.WebSite.Controllers
             try
             {
                 // TODO: Add insert logic here
+                char c = model.FirstName.FirstOrDefault();
+                model.Alias = c + model.LastName;
                 StudentBusiness.Add(model);
                 return RedirectToAction("Index");
             }
