@@ -10,11 +10,12 @@ namespace Domain.PCyP.Biz
     public class Category : EntityBase
     {
         public String name { get; set; }
+        public string RowGuid { get; set; }
+
         public Category()
         {
-            this.CreatedOn = DateTime.Now;
-            this.ChangedOn = DateTime.Now;
-            Id = CategoryBusiness.GetCategoryList().Count;
+          
+            //Id = CategoryBusiness.GetCategoryList().Count;
         }
     }
 }
