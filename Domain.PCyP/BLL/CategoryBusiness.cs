@@ -15,8 +15,8 @@ namespace Domain.PCyP.BLL
         {
 
             categoria.Id = Guid.NewGuid().ToString();
-            this.CreatedOn = DateTime.Now;
-            this.ChangedOn = DateTime.Now;
+            categoria.CreatedOn = DateTime.Now;
+            categoria.ChangedOn = DateTime.Now;
             var cdal = new CategoryRepository();
             cdal.Add(categoria);
 
