@@ -27,7 +27,8 @@ namespace PCyP.WebSite.Controllers
         {
             //var person = db.Find(new Category { RowGuid = id });
             //return View(person);
-            return View();
+            var category = CategoryBusiness.Find_Id(id);
+            return View(category);
         }
 
         // GET: Category/Create
@@ -53,11 +54,12 @@ namespace PCyP.WebSite.Controllers
         }
         
         // GET: Category/Edit/5
-        public ActionResult Edit(string model)
+        [HttpGet]
+        public ActionResult Edit(string id)
         {
             
-            var category = CategoryBusiness.Find_Id(model);
-            return View(model);
+            var category = CategoryBusiness.Find_Id(id);
+            return View(category);
         }
 
         // POST: Category/Edit/5
@@ -82,7 +84,7 @@ namespace PCyP.WebSite.Controllers
             //var lista = CategoryBusiness.GetCategoryList();
             //Category category = lista.Find(x => x.Id == id);
             var category = CategoryBusiness.Find_Id(id);
-            return View(id);
+            return View(category);
             //return View(category);
 
         }

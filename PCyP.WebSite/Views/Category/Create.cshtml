@@ -24,9 +24,9 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.CratedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.CratedBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.CratedBy, "", new { @class = "text-danger" })
         </div>
     </div>

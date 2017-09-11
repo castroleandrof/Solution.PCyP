@@ -10,7 +10,7 @@ namespace Domain.PCyP.Biz
     {
         public string Id { get; set; } 
         public DateTime CreatedOn { get; set; }
-        public int CratedBy { get; set; }
+        public int CreatedBy { get; set; }
         public DateTime ChangedOn { get; set; }
         public int ChangedBy { get; set; }
     }

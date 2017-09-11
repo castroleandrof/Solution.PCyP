@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Web;
 using Db4objects.Db4o;
 using Domain.PCyP.Biz;
 using Solution.PCyP.DAL;
@@ -39,8 +37,7 @@ namespace Domain.PCyP.Data
             using (var db = Db4oFactory.OpenFile(Path))
             {
                 var result = db.QueryByExample(new Category());
-                while (result != null && result.HasNext())
-                    lista.Add((Category)result.Next());
+                while (result != null && result.HasNext()) lista.Add((Category)result.Next());
 
                 db.Close();
             }
@@ -57,7 +54,7 @@ namespace Domain.PCyP.Data
         {
             using (var db = Db4oFactory.OpenFile(Path))
             {
-                var result = db.QueryByExample(new Category { RowGuid = model.RowGuid });
+                var result = db.QueryByExample(new Category { Id = model.Id });
                 var proto = (Category)result[0];
                 db.Delete(proto);
                 db.Commit();
@@ -75,8 +72,9 @@ namespace Domain.PCyP.Data
         {
             using (var db = Db4oFactory.OpenFile(Path))
             {
-                var result = db.QueryByExample(new Category { RowGuid = model.RowGuid });
+                var result = db.QueryByExample(new Category { Id = model.Id });
                 var proto = (Category)result[0];
+                proto.CreatedOn = model.CreatedOn;
                 ObjectMapper(model, proto);
                 db.Store(proto);
                 db.Commit();
@@ -89,7 +87,7 @@ namespace Domain.PCyP.Data
             Category proto;
             using (var db = Db4oFactory.OpenFile(Path))
             {
-                var result = db.QueryByExample(new Category { RowGuid = id });
+                var result = db.QueryByExample(new Category { Id = id });
                 proto = (Category)result[0];
                 db.Close();
             }
