@@ -19,12 +19,9 @@ namespace Domain.PCyP.Biz
         public String Gender { get; set; }
         public int TotalEnrollments { get; set; }
 
-        public Student() {
-            this.CreatedOn = DateTime.Now;
-            this.ChangedOn = DateTime.Now;
-        }
-
-
-
+      public Student(){
+            
+      }
+        
     }
 }

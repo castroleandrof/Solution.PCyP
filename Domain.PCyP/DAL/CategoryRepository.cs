@@ -3,20 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Db4objects.Db4o;
 using Domain.PCyP.Biz;
-using Solution.PCyP.DAL;
 using Domain.PCyP.DAL;
 
 namespace Domain.PCyP.Data
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class CategoryRepository : BaseRepository, ICrud<Category>
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="person"></param>
+
         public void Add(Category category)
         {
 
@@ -27,10 +20,7 @@ namespace Domain.PCyP.Data
                 db.Close();
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        
         public List<Category> All()
         {
             var lista = new List<Category>();
@@ -45,11 +35,6 @@ namespace Domain.PCyP.Data
         }
 
         
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="model"></param>
         public void Delete(Category model)
         {
             using (var db = Db4oFactory.OpenFile(Path))
@@ -64,10 +49,7 @@ namespace Domain.PCyP.Data
 
         
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="model"></param>
+       
         public void Edit(Category model)
         {
             using (var db = Db4oFactory.OpenFile(Path))
@@ -95,11 +77,7 @@ namespace Domain.PCyP.Data
             return proto;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        
         public Category Find(Category model)
         {
             Category proto;
@@ -111,10 +89,7 @@ namespace Domain.PCyP.Data
             }
             return proto;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        
         public ParallelQuery<Category> ParallelQuery()
         {
             var lista = new List<Category>();
@@ -127,14 +102,16 @@ namespace Domain.PCyP.Data
             return lista.AsParallel();
         }
 
-        List<Category> ICrud<Category>.All()
-        {
-            throw new NotImplementedException();
-        }
+        //List<Category> ICrud<Category>.All()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        ParallelQuery<Category> ICrud<Category>.ParallelQuery()
-        {
-            throw new NotImplementedException();
-        }
+        //ParallelQuery<Category> ICrud<Category>.ParallelQuery()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
     }
 }

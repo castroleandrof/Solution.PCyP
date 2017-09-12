@@ -1,9 +1,6 @@
 ﻿using Domain.PCyP.BLL;
 using Domain.PCyP.Biz;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PCyP.WebSite.Controllers
@@ -19,9 +16,10 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Student/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            var student = StudentBusiness.Find_Id(id);
+            return View(student);
         }
 
         // GET: Student/Create
@@ -49,19 +47,21 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Student/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            var student = StudentBusiness.Find_Id(id);
+            return View(student);
         }
 
         // POST: Student/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Student model)
         {
             try
             {
                 // TODO: Add update logic here
 
+                StudentBusiness.Edit(model);
                 return RedirectToAction("Index");
             }
             catch
@@ -71,19 +71,19 @@ namespace PCyP.WebSite.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            var student = StudentBusiness.Find_Id(id);
+            return View(student);
         }
 
         // POST: Student/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Student model)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                StudentBusiness.Delete(model);
                 return RedirectToAction("Index");
             }
             catch

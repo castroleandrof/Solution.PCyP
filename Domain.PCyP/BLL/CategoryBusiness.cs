@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.PCyP.BLL
 {
-    public static class CategoryBusiness
+    public class CategoryBusiness
     {
        
         public static void Add(Category categoria)
@@ -53,5 +53,7 @@ namespace Domain.PCyP.BLL
             var cdal = new CategoryRepository();
             cdal.Delete(categoria);
         }
+
+
     }
 }

@@ -15,29 +15,29 @@ namespace PCyP.WebSite.Controllers
     {
         
 
-        // GET: Category
+        // GET: Student
         public ActionResult Index()
         {
             var lista = CategoryBusiness.GetCategoryList();
             return View(lista);
         }
 
-        // GET: Category/Details/5
+        // GET: Student/Details/5
         public ActionResult Details(string id)
         {
-            //var person = db.Find(new Category { RowGuid = id });
+            //var person = db.Find(new Student { RowGuid = id });
             //return View(person);
             var category = CategoryBusiness.Find_Id(id);
             return View(category);
         }
 
-        // GET: Category/Create
+        // GET: Student/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Category/Create
+        // POST: Student/Create
         [HttpPost]
         public ActionResult Create(Category model)
         {
@@ -53,7 +53,7 @@ namespace PCyP.WebSite.Controllers
             }
         }
         
-        // GET: Category/Edit/5
+        // GET: Student/Edit/5
         [HttpGet]
         public ActionResult Edit(string id)
         {
@@ -62,34 +62,34 @@ namespace PCyP.WebSite.Controllers
             return View(category);
         }
 
-        // POST: Category/Edit/5
+        // POST: Student/Edit/5
         [HttpPost]
         public ActionResult Edit(Category model) 
         {
-            
-                // TODO: Add update logic here
-                //var lista = CategoryBusiness.GetCategoryList();
-                //Category category = lista.Find(x => x.Id == id);
-                //category.name = name;
-                //category.ChangedOn = DateTime.Now;
-                CategoryBusiness.Edit(model);
+
+            // TODO: Add update logic here
+            //var lista = CategoryBusiness.GetCategoryList();
+            //Student category = lista.Find(x => x.Id == id);
+            //category.name = name;
+            //category.ChangedOn = DateTime.Now;
+            CategoryBusiness.Edit(model);
                 return RedirectToAction("Index");
             
            
         }
 
-        // GET: Category/Delete/5
+        // GET: Student/Delete/5
         public ActionResult Delete(string id)
         {
             //var lista = CategoryBusiness.GetCategoryList();
-            //Category category = lista.Find(x => x.Id == id);
+            //Student category = lista.Find(x => x.Id == id);
             var category = CategoryBusiness.Find_Id(id);
             return View(category);
             //return View(category);
 
         }
 
-        // POST: Category/Delete/5
+        // POST: Student/Delete/5
         [HttpPost]
         public ActionResult Delete(Category model)
         {
@@ -97,7 +97,7 @@ namespace PCyP.WebSite.Controllers
             {
                 // TODO: Add delete logic here
                 //var lista = CategoryBusiness.GetCategoryList();
-                //Category category = lista.Find(x => x.Id == id);
+                //Student category = lista.Find(x => x.Id == id);
                 //lista.Remove(category);
                 CategoryBusiness.Delete(model);
                 return RedirectToAction("Index");
